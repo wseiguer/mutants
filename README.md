@@ -2,11 +2,6 @@
 
 Examen entrevista para Mercado Libre - Junio 2020
 
-Se puede ver una version estable del proyecto aqui:
-
-- [servicio es mutante](http://ec2-13-58-238-161.us-east-2.compute.amazonaws.com:4567/mutants/).
-- [servicio estadisticas](http://ec2-13-58-238-161.us-east-2.compute.amazonaws.com:4567/stats).
-
 - [Ejercicio](#ejercicio)
   - [Especificaciones](#especificaciones)
   - [Implementación y tecnologias usadas](#implementaci%C3%B3n-y-tecnologias-usadas)
