@@ -53,6 +53,17 @@
 			<version>1.4.200</version>
 		</dependency>
 	</dependencies>
+	<profiles>
+		<profile>
+			<id>prod</id>
+			<activation>
+				<property>
+					<name>envname</name>
+					<value>aws</value>
+				</property>
+			</activation>
+		</profile>
+	</profiles>
 
 	<build>
 		<plugins>
