@@ -41,16 +41,11 @@ los conceptos basicos de este framework utilizando la [documentacion oficial de 
 ## Setup
 
 ### Instrucciones
-Para compilar y ejecutar proyecto es necesario contar con la version 1.8 de la JDK y Maven para la gestion de las dependencias.
+Para compilar y ejecutar el proyecto es necesario contar con la version 11 de la JDK y Maven para la gestion de las dependencias.
 
-Tambien es necesario contar con una instancia de Mysql en caso de querer ejecutarlo localmente, se utilizan los datos de conexion por default de Mysql, 
-si la instancia se encuentra levantada en un host/port distinto se debe actualizar en el componente.
+Tambien es necesario contar con una instancia de Mysql en caso de querer ejecutarlo localmente, se utilizan los datos de conexion por default de Mysql o tambien se pueden utilizar las variables de sistema (MYSQL_HOST,MYSQL_PORT,MYSQL_USERNAME,MYSQL_PASSWORD) si la instacia contiene una configuración diferente.
 
 Clonar este repositorio: https://github.com/Saibuerns/mutants
-
-Una vez levantada la aplicacion se puede realizar invocaciones a la API.
-
-El puerto por defecto de la API es 8080.
 
 ### Uso
 
