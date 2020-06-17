@@ -12,18 +12,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(path = "/mutant")
 public class MutantController extends BaseController {
 
-    @PostMapping
-    public ResponseEntity<String> isMutant(@RequestBody String[] dna) {
-        Boolean isMutant = dnaAnalyzerService.isMutant(dna);
-        HttpStatus status;
-        String body;
-        if (isMutant) {
-            status = HttpStatus.OK;
-            body = "{\"message\": \"Welcome! Mutant Friend\"}";
-        } else {
-            status = HttpStatus.FORBIDDEN;
-            body = "{\"message\": \"Sorry! only mutants allowed\"}";
-        }
-        return ResponseEntity.status(status).contentType(MediaType.APPLICATION_JSON).body(body);
-    }
+	@PostMapping
+	public ResponseEntity<String> isMutant(@RequestBody String[] dna) {
+		HttpStatus status;
+		String body;
+		try {
+			Boolean isMutant = dnaAnalyzerService.isMutant(dna);
+			if (isMutant) {
+				status = HttpStatus.OK;
+				body = "{\"message\": \"Welcome! Mutant Friend\"}";
+			} else {
+				status = HttpStatus.FORBIDDEN;
+				body = "{\"message\": \"Sorry! only mutants allowed\"}";
+			}
+		} catch (IllegalArgumentException e) {
+			status = HttpStatus.BAD_REQUEST;
+			body = e.getMessage();
+		}
+		
+		return ResponseEntity.status(status)
+				.contentType(MediaType.APPLICATION_JSON).body(body);
+	}
 }
